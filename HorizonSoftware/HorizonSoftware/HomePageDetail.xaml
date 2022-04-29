@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HorizonSoftware.HomePageDetail"
+             Title="Horizon Technology"
+             NavigationPage.HasNavigationBar="false">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add"
+             
+                 Order="Primary"
+                 Priority="0"
+                     />
+    </ContentPage.ToolbarItems>
+
+
+    <StackLayout Margin="20,35,20,20">
+        <Entry x:Name="nameEntry"
+               Placeholder="Enter name" TextColor= "Black" FontSize="Subtitle" FontAttributes="Italic" />
+        <CheckBox x:Name="subscribed" />
+        <Button Text="Add to Database" 
+                Clicked="Button_Clicked" />
+        <CollectionView x:Name="collectionView">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                        <Label Text="{Binding Name}"
+                               FontSize="Medium" FontAttributes="Italic" TextColor="Black" />
+                        <Label Text="{Binding Subscribed}"
+                               TextColor="Black"
+                               FontSize="Small"/>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+
+    </StackLayout>
+
+</ContentPage>
