@@ -20,14 +20,38 @@
         <Label Text="Please Login!" FontSize="Subtitle" FontAttributes="Bold" TextColor="#171717" Padding="160,10,0,0"/>
 
 
-        <StackLayout Padding="40" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+        <StackLayout Padding="40,40,40,10" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
 
-            <Entry  x:Name="txtUserName" Placeholder="UserName" TextColor="#171717" PlaceholderColor="Gray"></Entry>
+            <!--<Entry  x:Name="txtUserName" Placeholder="UserName" TextColor="#171717" PlaceholderColor="Gray"></Entry>-->
+            <Entry x:Name="txtUsername" Placeholder="Username" TextColor="#171717" PlaceholderColor="Gray"></Entry>
             <Entry  x:Name="txtPassword" Placeholder="Password" IsPassword="True" TextColor="#171717" PlaceholderColor="Gray"></Entry>
         </StackLayout>
+        
+        
+
+        <StackLayout>
+            <Label Padding="140,5,0,10">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Frogot Password?" TextColor="#171717" FontAttributes="Bold" TextDecorations="Underline"/>
+                    </FormattedString>
+                </Label.FormattedText>
+
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"/>
+                </Label.GestureRecognizers>
+
+
+            </Label>
+        </StackLayout>
+        
+        
+        
+        
+        
         <StackLayout Margin="20,0,20,0">
             <Button 
-                Command="{Binding LoginCommand}"
+             
               VerticalOptions="Center"
               Text="Login"
               TextColor="White"

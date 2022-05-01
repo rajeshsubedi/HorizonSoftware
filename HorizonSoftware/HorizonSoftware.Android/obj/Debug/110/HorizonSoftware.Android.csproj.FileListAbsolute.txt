@@ -647,3 +647,4 @@ C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware.Android
 C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware.Android\obj\Debug\110\android\assets\I18N.pdb
 C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware.Android\obj\Debug\110\android\assets\I18N.West.dll
 C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware.Android\obj\Debug\110\android\assets\I18N.West.pdb
+C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware.Android\obj\Debug\110\res\drawable\horizon.png

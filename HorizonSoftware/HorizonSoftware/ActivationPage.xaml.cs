@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -30,7 +31,50 @@ namespace HorizonSoftware
             string srvrpassword = "12345";
             string sqlconn = $"Data Source={srvrname};Initial Catalog={srvrdbname};User ID={srvrusername};Password={srvrpassword}";
             sqlConnection = new SqlConnection(sqlconn);
+            CheckForActivation();
         }
+
+        public void CheckForActivation()
+        {
+            try
+            {
+                sqlConnection.Open();
+
+                using (var sqlCommand = new SqlCommand($"SELECT Liscence FROM dbo.myactivation WHERE MacAddress='{GetMacAddress().ToString()}'", sqlConnection))
+                {
+                    SqlDataReader reader = sqlCommand.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        
+                        _ = Navigation.PushAsync(new LoginPage());
+                    }
+
+                }
+                sqlConnection.Close();
+            }
+            catch (Exception)
+            {
+                sqlConnection.Close();
+            }
+        }
+
+
+        //for activation save in database
+        public static PhysicalAddress GetMacAddress()
+        {
+            foreach (NetworkInterface nic in NetworkInterface.GetAllNetworkInterfaces())
+            {
+                // Only consider Ethernet network interfaces
+                if (nic.NetworkInterfaceType == NetworkInterfaceType.Ethernet &&
+                    nic.OperationalStatus == OperationalStatus.Up)
+                {
+                    return nic.GetPhysicalAddress();
+                }
+            }
+            return null;
+        }
+
+
 
 
 
@@ -61,7 +105,20 @@ namespace HorizonSoftware
                     SqlDataReader reader = sqlCommand.ExecuteReader();
                     if (reader.Read())
                     {
-                        await App.Current.MainPage.DisplayAlert("Alert", "Activated", "Ok");
+                        sqlConnection.Close();
+                        sqlConnection.Open();
+                        using (SqlCommand command = new SqlCommand("UPDATE  dbo.myactivation SET MacAddress = @MacAddress WHERE Liscence=@Liscence and Token=@Token", sqlConnection))
+                        {
+                            command.Parameters.Add(new SqlParameter("MacAddress", GetMacAddress().ToString()));
+                            command.Parameters.Add(new SqlParameter("Liscence", txtliscence.Text));
+                            command.Parameters.Add(new SqlParameter("Token", txttoken.Text));
+                            command.ExecuteNonQuery();
+                        }
+                        await App.Current.MainPage.DisplayAlert("Alert","Activated", "Ok");
+                         
+                        // update myactivation table status for particular liscence and token
+                        //store current liscence tokrn and ststus in sqlite
+
 
                         _ = Navigation.PushAsync(new LoginPage());
                     }

@@ -12,11 +12,11 @@ namespace HorizonSoftware
     public partial class LoginPage : ContentPage
 
     {
-        public class mysqlList
-        {
-            public string username { get; set; }
-            public string password { get; set; }
-        }
+        //public class mysqlList
+        //{
+        //    public string username { get; set; }
+        //    public string password { get; set; }
+        //}
 
 
         SqlConnection sqlConnection;
@@ -45,18 +45,21 @@ namespace HorizonSoftware
             //}
 
             {
-                //Console.WriteLine(txtliscence.Text);
+                Console.WriteLine($"SELECT username From dbo.mylogin WHERE username='{txtUsername.Text}' and password='{txtPassword.Text}'");
                 try
                 {
+                    //App.Current.MainPage.DisplayAlert("Alert", $"SELECT  FROM dbo.logindb WHERE username ={txtUsername.Text} and password = {txtPassword.Text}", "Ok");
+                    //Console.WriteLine($"SELECT  FROM dbo.logindb WHERE username={txtUsername.Text} and password={txtPassword.Text}");
                     sqlConnection.Open();
 
-                    using (var sqlCommand = new SqlCommand($"SELECT username FROM dbo.mylogin WHERE username={txtUserName.Text} and password={txtPassword.Text}", sqlConnection))
-                    {
-                        SqlDataReader reader = sqlCommand.ExecuteReader();
+                    //using (var sqlCommand = new SqlCommand($"SELECT username FROM dbo.mylogin WHERE username={txtUsername.Text} and password={txtPassword.Text}", sqlConnection))
+                    //{
+                    using (var sqlCommand = new SqlCommand($"SELECT username From dbo.mylogin WHERE username='{txtUsername.Text}' and password='{txtPassword.Text}'", sqlConnection))
+                    { 
+                            SqlDataReader reader = sqlCommand.ExecuteReader();
                         if (reader.Read())
                         {
                             await App.Current.MainPage.DisplayAlert("Alert", "Login Successful.", "Ok");
-
                             _ = Navigation.PushAsync(new HomePage());
                         }
                         else
@@ -87,6 +90,11 @@ namespace HorizonSoftware
             {
                 Navigation.PushAsync(new SignupPage());
             }
+        }
+
+        private void TapGestureRecognizer_Tapped_1(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new ForgotPasswordPage(txtUsername.Text));
         }
     }
 }

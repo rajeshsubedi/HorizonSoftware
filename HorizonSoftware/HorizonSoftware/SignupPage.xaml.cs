@@ -45,6 +45,7 @@ namespace HorizonSoftware
                 }
                 sqlConnection.Close();
                 await App.Current.MainPage.DisplayAlert("Alert", "Signind", "Ok");
+                _ = Navigation.PushAsync(new LoginPage());
             }
 
 

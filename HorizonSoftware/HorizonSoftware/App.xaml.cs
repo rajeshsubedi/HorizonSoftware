@@ -2,7 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using System.IO;
-
+using System.Net.NetworkInformation;
 
 namespace HorizonSoftware
 {
@@ -13,6 +13,21 @@ namespace HorizonSoftware
             InitializeComponent();
 
             MainPage = new NavigationPage(new ActivationPage());
+
+        }
+
+        public static PhysicalAddress GetMacAddress()
+        {
+            foreach (NetworkInterface nic in NetworkInterface.GetAllNetworkInterfaces())
+            {
+                // Only consider Ethernet network interfaces
+                if (nic.NetworkInterfaceType == NetworkInterfaceType.Ethernet &&
+                    nic.OperationalStatus == OperationalStatus.Up)
+                {
+                    return nic.GetPhysicalAddress();
+                }
+            }
+            return null;
         }
 
         protected override void OnStart()

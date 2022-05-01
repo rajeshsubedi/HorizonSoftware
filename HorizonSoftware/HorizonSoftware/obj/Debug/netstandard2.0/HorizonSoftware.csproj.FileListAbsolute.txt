@@ -18,3 +18,4 @@ C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware\obj\Deb
 C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware\obj\Debug\netstandard2.0\HomePage.xaml.g.cs
 C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware\obj\Debug\netstandard2.0\HomePageDetail.xaml.g.cs
 C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware\obj\Debug\netstandard2.0\HomePageFlyout.xaml.g.cs
+C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware\obj\Debug\netstandard2.0\ForgotPasswordPage.xaml.g.cs
