@@ -2,9 +2,10 @@
 <FlyoutPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HorizonSoftware.HomePage"
-             xmlns:pages="clr-namespace:HorizonSoftware">
+             xmlns:pages="clr-namespace:HorizonSoftware"
+            NavigationPage.HasNavigationBar="false">
   <FlyoutPage.Flyout>
-    <pages:HomePageFlyout x:Name="FlyoutPage" />
+        <pages:HomePageFlyout x:Name="FlyoutPage" />
   </FlyoutPage.Flyout>
   <FlyoutPage.Detail>
     <NavigationPage>

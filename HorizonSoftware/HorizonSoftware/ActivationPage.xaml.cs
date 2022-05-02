@@ -16,8 +16,8 @@ namespace HorizonSoftware
     {
         public class mysqlList
         {
-            public int Liscence { get; set; }
-            public int Token { get; set; }
+            public string Liscence { get; set; }
+            public string Token { get; set; }
         }
 
         SqlConnection sqlConnection;
@@ -118,7 +118,6 @@ namespace HorizonSoftware
                          
                         // update myactivation table status for particular liscence and token
                         //store current liscence tokrn and ststus in sqlite
-
 
                         _ = Navigation.PushAsync(new LoginPage());
                     }

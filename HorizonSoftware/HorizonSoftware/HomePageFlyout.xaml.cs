@@ -15,6 +15,7 @@ namespace HorizonSoftware
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class HomePageFlyout : ContentPage
     {
+        ViewCell lastCell;
         public ListView ListView;
 
         public HomePageFlyout()
@@ -33,11 +34,11 @@ namespace HorizonSoftware
             {
                 MenuItems = new ObservableCollection<HomePageFlyoutMenuItem>(new[]
                 {
-                    new HomePageFlyoutMenuItem { Id = 0, Title = "Page 1" },
-                    new HomePageFlyoutMenuItem { Id = 1, Title = "Page 2" },
-                    new HomePageFlyoutMenuItem { Id = 2, Title = "Page 3" },
-                    new HomePageFlyoutMenuItem { Id = 3, Title = "Page 4" },
-                    new HomePageFlyoutMenuItem { Id = 4, Title = "Page 5" },
+                    new HomePageFlyoutMenuItem { Id = 0, Title = "Feature1" , IconSource="comp1.png" },
+                    new HomePageFlyoutMenuItem { Id = 1, Title = "Feature2" , IconSource="comp1.png"},
+                    new HomePageFlyoutMenuItem { Id = 2, Title = "Feature3" , IconSource="comp1.png"},
+                    new HomePageFlyoutMenuItem { Id = 3, Title = "Feature4" , IconSource="comp1.png"},
+                    new HomePageFlyoutMenuItem { Id = 4, Title = "Feature5" ,IconSource="comp1.png" },
                 });
             }
 
@@ -51,6 +52,18 @@ namespace HorizonSoftware
                 PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
             }
             #endregion
+        }
+
+        private void ViewCell_Tapped(object sender, EventArgs e)
+        {
+            if (lastCell != null)
+                lastCell.View.BackgroundColor = Color.Transparent;
+            var viewCell = (ViewCell)sender;
+            if (viewCell.View != null)
+            {
+                viewCell.View.BackgroundColor = Color.Orange;
+                lastCell = viewCell;
+            }
         }
     }
 }
