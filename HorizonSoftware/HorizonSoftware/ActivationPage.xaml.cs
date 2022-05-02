@@ -40,7 +40,7 @@ namespace HorizonSoftware
             {
                 sqlConnection.Open();
 
-                using (var sqlCommand = new SqlCommand($"SELECT Liscence FROM dbo.myactivation WHERE MacAddress='{GetMacAddress().ToString()}'", sqlConnection))
+                using (var sqlCommand = new SqlCommand($"SELECT Liscence FROM dbo.myactivation WHERE MacAddress={GetMacAddress().ToString()}", sqlConnection))
                 {
                     SqlDataReader reader = sqlCommand.ExecuteReader();
                     if (reader.Read())
@@ -100,7 +100,7 @@ namespace HorizonSoftware
             {
                 sqlConnection.Open();
 
-                using (var sqlCommand = new SqlCommand($"SELECT Liscence FROM dbo.myactivation WHERE Liscence={txtliscence.Text} and Token={txttoken.Text}", sqlConnection))
+                using (var sqlCommand = new SqlCommand($"SELECT Liscence FROM dbo.myactivation WHERE Liscence='{txtliscence.Text}' and Token='{txttoken.Text}'", sqlConnection))
                 {
                     SqlDataReader reader = sqlCommand.ExecuteReader();
                     if (reader.Read())
@@ -114,8 +114,8 @@ namespace HorizonSoftware
                             command.Parameters.Add(new SqlParameter("Token", txttoken.Text));
                             command.ExecuteNonQuery();
                         }
-                        await App.Current.MainPage.DisplayAlert("Alert","Activated", "Ok");
-                         
+                        await App.Current.MainPage.DisplayAlert("Alert", "Activated", "Ok");
+
                         // update myactivation table status for particular liscence and token
                         //store current liscence tokrn and ststus in sqlite
 
@@ -128,13 +128,13 @@ namespace HorizonSoftware
                     {
                         await App.Current.MainPage.DisplayAlert("Alert", "Not activated", "Ok");
                     }
-
-                    reader.Close();
+                
+                     reader.Close();
                     reader.Dispose();
+
                 }
-
-                sqlConnection.Close();
-
+                    sqlConnection.Close();
+                
 
             }
             catch (Exception ex)
