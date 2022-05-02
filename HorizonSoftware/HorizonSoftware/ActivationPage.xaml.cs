@@ -40,7 +40,7 @@ namespace HorizonSoftware
             {
                 sqlConnection.Open();
 
-                using (var sqlCommand = new SqlCommand($"SELECT Liscence FROM dbo.myactivation WHERE MacAddress={GetMacAddress().ToString()}", sqlConnection))
+                using (var sqlCommand = new SqlCommand($"SELECT Liscence FROM dbo.myactivation WHERE MacAddress='{GetMacAddress().ToString()}'", sqlConnection))
                 {
                     SqlDataReader reader = sqlCommand.ExecuteReader();
                     if (reader.Read())
@@ -128,13 +128,13 @@ namespace HorizonSoftware
                     {
                         await App.Current.MainPage.DisplayAlert("Alert", "Not activated", "Ok");
                     }
-                
-                     reader.Close();
+
+                    reader.Close();
                     reader.Dispose();
 
-                }
+
                     sqlConnection.Close();
-                
+                }
 
             }
             catch (Exception ex)
