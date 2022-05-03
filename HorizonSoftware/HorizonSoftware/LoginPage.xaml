@@ -52,7 +52,6 @@
         
         <StackLayout Margin="20,0,20,0">
             <Button 
-             
               VerticalOptions="Center"
               Text="Login"
               TextColor="White"

@@ -1,12 +1,127 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="HorizonSoftware.LoanPage">
+             x:Class="HorizonSoftware.LoanPage"
+             Title="Loan Account">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to LoanPage!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <!--<Label Text="Deposite Account !" FontSize="Title" TextColor="#171717" HorizontalOptions="Center" VerticalOptions="Start" Padding="10,10,0,0" TextDecorations="Underline"/>-->
+
+            <Label Text="Account Number" FontSize="20"  TextColor="#171717" HorizontalOptions="Start" VerticalOptions="Start" Padding="25,30,0,-5"/>
+            <StackLayout Padding="25,0,30,0">
+                <Entry x:Name="AccountNumber" Placeholder="account number" TextColor="#112B47" PlaceholderColor="Gray"></Entry>
+            </StackLayout>
+
+            <Label Text="A/C Holder's Name" FontSize="20"  TextColor="#171717" HorizontalOptions="Start" VerticalOptions="Start" Padding="25,25,0,-5"/>
+            <StackLayout Padding="25,0,30,0">
+                <Entry x:Name="AccountHolder" Placeholder="account holder name" IsReadOnly="True" TextColor="#112B47" PlaceholderColor="Gray"></Entry>
+            </StackLayout>
+
+                         <!--principle amount and interest rate-->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition Width="160"/>
+                    <ColumnDefinition Width="180"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <StackLayout  Grid.Row="1" Grid.Column="1">
+                    <Label Text="Principle Amount" FontSize="20"  TextColor="#171717" HorizontalOptions="Start" VerticalOptions="Start" Padding="0,25,0,0"/>
+                    <Entry x:Name="Amount" Placeholder="amount" IsReadOnly="True" TextColor="#112B47" PlaceholderColor="Gray"></Entry>
+                </StackLayout>
+
+                <StackLayout  Grid.Row="1" Grid.Column="2">
+                    <Label Text="Interest Rate" FontSize="20"  TextColor="#171717" HorizontalOptions="Start" VerticalOptions="Start" Padding="40,25,0,0"/>
+                    <Entry x:Name="Rate" Placeholder="rate" IsReadOnly="True" TextColor="#112B47" Margin="40,0,0,0" PlaceholderColor="Gray"></Entry>
+                </StackLayout>
+            </Grid>
+
+
+                                 <!--Fine principle and fine amouunt-->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition Width="160"/>
+                    <ColumnDefinition Width="180"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <StackLayout  Grid.Row="1" Grid.Column="1">
+                    <Label Text="Fine Amount" FontSize="20"  TextColor="#171717" HorizontalOptions="Start" VerticalOptions="Start" Padding="0,25,0,0"/>
+                    <Entry x:Name="FineAmount" Placeholder="fine amount" IsReadOnly="True" TextColor="#112B47" PlaceholderColor="Gray"></Entry>
+                </StackLayout>
+
+                <StackLayout  Grid.Row="1" Grid.Column="2">
+                    <Label Text="Fine Rate" FontSize="20"  TextColor="#171717" HorizontalOptions="Start" VerticalOptions="Start" Padding="40,25,0,0"/>
+                    <Entry x:Name="FineRate" Placeholder="fine rate" IsReadOnly="True" TextColor="#112B47" Margin="40,0,0,0" PlaceholderColor="Gray"></Entry>
+                </StackLayout>
+            </Grid>
+
+                    <!--for due and recieved amount-->
+
+            <Label Text="Total Due" FontSize="20"  TextColor="#171717" HorizontalOptions="Start" VerticalOptions="Start" Padding="25,30,0,-5"/>
+            <StackLayout Padding="25,0,30,0">
+                <Entry x:Name="TotalDue" Placeholder="remaining due" IsReadOnly="True" TextColor="#112B47" PlaceholderColor="Gray"></Entry>
+            </StackLayout>
+
+            <Label Text="Recieved Amount" FontSize="20"  TextColor="#171717" HorizontalOptions="Start" VerticalOptions="Start" Padding="25,30,0,-5"/>
+            <StackLayout Padding="25,0,30,0">
+                <Entry x:Name="RecievedAmount" Placeholder="amount recieved"  TextColor="#112B47" PlaceholderColor="Gray"></Entry>
+            </StackLayout>
+            
+                                   <!--for save and cancle button-->
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition Width="180"/>
+                    <ColumnDefinition Width="180"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Button 
+                   Margin="15,0,20,5"
+                     Grid.Row="1"
+                        Grid.Column="1"
+                       HeightRequest="70"
+                        WidthRequest="60"
+                      Text="Save"
+                    FontSize="20"
+              TextColor="White"
+              BackgroundColor="#112B47"
+                BorderColor="#6D6D6D"
+              BorderWidth="1.5"
+              CornerRadius="20"
+           Clicked="Button_Clicked"       
+              ></Button>
+
+                <Button 
+                    Margin="15,0,20,5"
+                        Grid.Row="1"
+                        Grid.Column="2"
+                  HeightRequest="60"
+                        WidthRequest="40"
+                    FontSize="20"
+              Text="Cancle"
+              TextColor="White"
+              BackgroundColor="#112B47"
+                BorderColor="#6D6D6D"
+              BorderWidth="1.5"
+              CornerRadius="20"
+           Clicked="Button_Clicked_1"        
+              ></Button>
+            </Grid>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

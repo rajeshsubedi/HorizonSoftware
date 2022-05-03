@@ -4,13 +4,13 @@
              x:Class="HorizonSoftware.HomePageDetail"
              Title="Horizon Technology"
              BackgroundColor="#eeeeee">
-    <ContentPage.ToolbarItems>
+    <!--<ContentPage.ToolbarItems>
         <ToolbarItem Text="Add"
            
                  Order="Primary"
                  Priority="0"
                      />
-    </ContentPage.ToolbarItems>
+    </ContentPage.ToolbarItems>-->
 
     <StackLayout>
 
