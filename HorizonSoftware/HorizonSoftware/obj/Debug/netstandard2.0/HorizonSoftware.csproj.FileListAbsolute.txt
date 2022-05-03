@@ -2,7 +2,6 @@ C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware\bin\Deb
 C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware\bin\Debug\netstandard2.0\HorizonSoftware.dll
 C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware\bin\Debug\netstandard2.0\ref\HorizonSoftware.dll
 C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware\bin\Debug\netstandard2.0\HorizonSoftware.pdb
-C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware\obj\Debug\netstandard2.0\HorizonSoftware.csproj.AssemblyReference.cache
 C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware\obj\Debug\netstandard2.0\HorizonSoftware.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware\obj\Debug\netstandard2.0\App.xaml.g.cs
 C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware\obj\Debug\netstandard2.0\HorizonSoftware.AssemblyInfoInputs.cache
@@ -19,3 +18,7 @@ C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware\obj\Deb
 C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware\obj\Debug\netstandard2.0\HomePageDetail.xaml.g.cs
 C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware\obj\Debug\netstandard2.0\HomePageFlyout.xaml.g.cs
 C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware\obj\Debug\netstandard2.0\ForgotPasswordPage.xaml.g.cs
+C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware\obj\Debug\netstandard2.0\DepositePage.xaml.g.cs
+C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware\obj\Debug\netstandard2.0\LoanPage.xaml.g.cs
+C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware\obj\Debug\netstandard2.0\TodayPage.xaml.g.cs
+C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware\obj\Debug\netstandard2.0\HorizonSoftware.csproj.AssemblyReference.cache

@@ -8,11 +8,14 @@ namespace HorizonSoftware
 {
     public partial class App : Application
     {
+
         public App()
         {
             InitializeComponent();
-
             MainPage = new NavigationPage(new ActivationPage());
+            //{
+            //    BarBackgroundColor = Color.Black;
+            //}
 
         }
 

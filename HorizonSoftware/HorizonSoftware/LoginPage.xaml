@@ -10,12 +10,13 @@
 
 
         <Frame BackgroundColor="#112B47" Padding="0,0,0,0" CornerRadius="0">
-
             <Label Text="Welcome to Horizon Technology!" HorizontalTextAlignment="Center" TextColor="White" FontSize="30"/>
-
         </Frame>
 
-        <Image Source="horizon.png" WidthRequest="110" HeightRequest="110"></Image>
+        <Image Source="horizon.png"
+               WidthRequest="110" 
+               HeightRequest="110">
+        </Image>
 
         <Label Text="Please Login!" FontSize="Subtitle" FontAttributes="Bold" TextColor="#171717" Padding="160,10,0,0"/>
 

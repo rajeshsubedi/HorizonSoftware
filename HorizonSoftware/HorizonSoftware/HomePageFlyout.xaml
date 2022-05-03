@@ -27,7 +27,7 @@
 
 
                     <Image Aspect="AspectFill"
-                      Source="background.png"
+                      Source="back1.png"
                            Grid.ColumnSpan="5"
                            Grid.RowSpan="4"
                            Opacity="0.6"/>

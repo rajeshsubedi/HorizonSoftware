@@ -3,7 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HorizonSoftware.HomePage"
              xmlns:pages="clr-namespace:HorizonSoftware"
-            NavigationPage.HasNavigationBar="false">
+            NavigationPage.HasNavigationBar="false"
+         
+            >
   <FlyoutPage.Flyout>
         <pages:HomePageFlyout x:Name="FlyoutPage" />
   </FlyoutPage.Flyout>

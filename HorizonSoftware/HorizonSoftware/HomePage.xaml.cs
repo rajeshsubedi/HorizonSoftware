@@ -15,6 +15,7 @@ namespace HorizonSoftware
         {
             InitializeComponent();
             FlyoutPage.ListView.ItemSelected += ListView_ItemSelected;
+            Color BarBackgroundColor = Color.FromHex("#484559");
         }
 
         private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)

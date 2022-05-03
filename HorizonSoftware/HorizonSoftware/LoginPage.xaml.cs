@@ -25,7 +25,7 @@ namespace HorizonSoftware
         {
             InitializeComponent();
             string srvrdbname = "mydb";
-            string srvrname = "192.168.1.67";
+            string srvrname = "192.168.1.69";
             string srvrusername = "Rajesh";
             string srvrpassword = "12345";
             string sqlconn = $"Data Source={srvrname};Initial Catalog={srvrdbname};User ID={srvrusername};Password={srvrpassword}";
@@ -59,7 +59,7 @@ namespace HorizonSoftware
                             SqlDataReader reader = sqlCommand.ExecuteReader();
                         if (reader.Read())
                         {
-                            await App.Current.MainPage.DisplayAlert("Alert", "Login Successful.", "Ok");
+                            //await App.Current.MainPage.DisplayAlert("Alert", "Login Successful.", "Ok");
                             _ = Navigation.PushAsync(new HomePage());
                         }
                         else

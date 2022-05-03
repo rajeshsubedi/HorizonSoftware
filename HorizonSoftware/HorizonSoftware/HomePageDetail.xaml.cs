@@ -14,12 +14,25 @@ namespace HorizonSoftware
     {
         public HomePageDetail()
         {
+            var navigationPage = Application.Current.MainPage as NavigationPage;
+            navigationPage.BarBackgroundColor = Color.Black;
             InitializeComponent();
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
+            Navigation.PushAsync(new DepositePage());
 
+        }
+
+        private void TapGestureRecognizer_Tapped_1(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new LoanPage());
+        }
+
+        private void TapGestureRecognizer_Tapped_2(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new TodayPage());
         }
     }
 }

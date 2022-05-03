@@ -654,3 +654,7 @@ C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware.Android
 C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware.Android\obj\Debug\110\res\drawable\aero.png
 C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware.Android\obj\Debug\110\res\drawable\back1.png
 C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware.Android\obj\Debug\110\res\drawable\back.png
+C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware.Android\obj\Debug\110\res\drawable\loan.png
+C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware.Android\obj\Debug\110\res\drawable\deposit.png
+C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware.Android\obj\Debug\110\res\drawable\sahakari.png
+C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware.Android\obj\Debug\110\res\drawable\download.png
