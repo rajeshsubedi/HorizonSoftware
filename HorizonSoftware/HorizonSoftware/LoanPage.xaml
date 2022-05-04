@@ -1,23 +1,36 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:horizonsoftware="clr-namespace:HorizonSoftware"
              x:Class="HorizonSoftware.LoanPage"
              Title="Loan Account">
-    <ContentPage.Content>
+    <ScrollView>
+    <!--<ContentPage.Content>-->
+    
         <StackLayout>
             <!--<Label Text="Deposite Account !" FontSize="Title" TextColor="#171717" HorizontalOptions="Center" VerticalOptions="Start" Padding="10,10,0,0" TextDecorations="Underline"/>-->
 
             <Label Text="Account Number" FontSize="20"  TextColor="#171717" HorizontalOptions="Start" VerticalOptions="Start" Padding="25,30,0,-5"/>
-            <StackLayout Padding="25,0,30,0">
-                <Entry x:Name="AccountNumber" Placeholder="account number" TextColor="#112B47" PlaceholderColor="Gray"></Entry>
-            </StackLayout>
+            <!--<StackLayout Padding="25,0,30,0">-->   
+            <StackLayout Orientation="Vertical">
+                <SearchBar Placeholder="Search Account Number" x:Name="AccountNumber"
+                SearchButtonPressed="SearchBar_SearchButtonPressed" SearchCommandParameter="{Binding Text, Source={x:Reference AccountNumber}}" TextColor="Gray"/>
+                
+                <!--<ListView x:Name="SuggestedListView"/>-->
+                <!--<Entry x:Name="AccountNumber" Placeholder="account number" TextColor="#112B47" PlaceholderColor="Gray"></Entry>
+            </StackLayout>-->
+                
+                    </StackLayout>
 
+            
             <Label Text="A/C Holder's Name" FontSize="20"  TextColor="#171717" HorizontalOptions="Start" VerticalOptions="Start" Padding="25,25,0,-5"/>
+           
             <StackLayout Padding="25,0,30,0">
-                <Entry x:Name="AccountHolder" Placeholder="account holder name" IsReadOnly="True" TextColor="#112B47" PlaceholderColor="Gray"></Entry>
-            </StackLayout>
-
-                         <!--principle amount and interest rate-->
+               
+                <Entry x:Name="AccountHolder" Placeholder="account holder name" IsReadOnly="True" TextColor="#112B47" Text="{Binding AccountHolder}" PlaceholderColor="Gray"></Entry>
+              
+                    </StackLayout>
+            <!--principle amount and interest rate-->
+            
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="20"/>
@@ -28,15 +41,15 @@
                     <RowDefinition Height="0"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-
+                     
                 <StackLayout  Grid.Row="1" Grid.Column="1">
                     <Label Text="Principle Amount" FontSize="20"  TextColor="#171717" HorizontalOptions="Start" VerticalOptions="Start" Padding="0,25,0,0"/>
-                    <Entry x:Name="Amount" Placeholder="amount" IsReadOnly="True" TextColor="#112B47" PlaceholderColor="Gray"></Entry>
+                    <Entry x:Name="PrincipleAmount" Placeholder="amount" IsReadOnly="True" TextColor="#112B47" PlaceholderColor="Gray"></Entry>
                 </StackLayout>
 
                 <StackLayout  Grid.Row="1" Grid.Column="2">
                     <Label Text="Interest Rate" FontSize="20"  TextColor="#171717" HorizontalOptions="Start" VerticalOptions="Start" Padding="40,25,0,0"/>
-                    <Entry x:Name="Rate" Placeholder="rate" IsReadOnly="True" TextColor="#112B47" Margin="40,0,0,0" PlaceholderColor="Gray"></Entry>
+                    <Entry x:Name="InterestRate" Placeholder="rate" IsReadOnly="True" TextColor="#112B47" Margin="40,0,0,0" PlaceholderColor="Gray"></Entry>
                 </StackLayout>
             </Grid>
 
@@ -85,12 +98,12 @@
                     <ColumnDefinition Width="180"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="60"/>
-                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="100"/>
                 </Grid.RowDefinitions>
 
                 <Button 
-                   Margin="15,0,20,5"
+                   Margin="15,0,20,40"
                      Grid.Row="1"
                         Grid.Column="1"
                        HeightRequest="70"
@@ -106,7 +119,7 @@
               ></Button>
 
                 <Button 
-                    Margin="15,0,20,5"
+                    Margin="15,0,20,40"
                         Grid.Row="1"
                         Grid.Column="2"
                   HeightRequest="60"
@@ -123,5 +136,7 @@
             </Grid>
 
         </StackLayout>
-    </ContentPage.Content>
+    <!--</ContentPage.Content>-->
+    </ScrollView>
+   
 </ContentPage>
