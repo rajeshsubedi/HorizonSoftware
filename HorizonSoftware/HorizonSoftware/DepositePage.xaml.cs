@@ -44,7 +44,7 @@ namespace HorizonSoftware
 
                 List<mysqlList> mysqlLists = new List<mysqlList>();
                 sqlConnection.Open();
-                string queryString = $"Select * from dbo.DepositTable WHERE AccountNumber='{AccountNumber.Text}'";
+                string queryString = $"Select * from dbo.DepositTable WHERE AccountNumber='{1234}'";
                 SqlCommand command = new SqlCommand(queryString, sqlConnection);
                 SqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
@@ -53,14 +53,14 @@ namespace HorizonSoftware
                     {
                         AccountNumber = reader["AccountNumber"].ToString(),
                         AccountHolder = reader["AccountHolder"].ToString(),
-                        
                     }
                     );
 
                 }
                 reader.Close();
                 sqlConnection.Close();
-            
+                myListView.ItemsSource = mysqlLists;
+
 
             }
 
