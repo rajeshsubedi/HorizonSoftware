@@ -2,16 +2,17 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:horizonsoftware="clr-namespace:HorizonSoftware"
              x:Class="HorizonSoftware.LoanPage"
-             Title="Loan Account">
+             Title="Loan Account"
+             BackgroundColor="LightBlue">
     <ScrollView>
     <!--<ContentPage.Content>-->
     
         <StackLayout>
             <!--<Label Text="Deposite Account !" FontSize="Title" TextColor="#171717" HorizontalOptions="Center" VerticalOptions="Start" Padding="10,10,0,0" TextDecorations="Underline"/>-->
 
-            <Label Text="Account Number" FontSize="20"  TextColor="#171717" HorizontalOptions="Start" VerticalOptions="Start" Padding="25,30,0,-5"/>
+            <Label Text="Account Number" FontSize="20"  TextColor="#171717" HorizontalOptions="Start" VerticalOptions="Start" Padding="25,10,0,-5"/>
             <!--<StackLayout Padding="25,0,30,0">-->   
-            <StackLayout Orientation="Vertical">
+            <StackLayout Orientation="Vertical" Margin="0,5,0,-20">
                 <SearchBar Placeholder="Search Account Number" x:Name="AccountNumber"
                 SearchButtonPressed="SearchBar_SearchButtonPressed" SearchCommandParameter="{Binding Text, Source={x:Reference AccountNumber}}" TextColor="Gray"/>
                 
@@ -24,9 +25,9 @@
             
             <Label Text="A/C Holder's Name" FontSize="20"  TextColor="#171717" HorizontalOptions="Start" VerticalOptions="Start" Padding="25,25,0,-5"/>
            
-            <StackLayout Padding="25,0,30,0">
+            <StackLayout Padding="20,0,0,0">
                
-                <Entry x:Name="AccountHolder" Placeholder="account holder name" IsReadOnly="True" TextColor="#112B47" Text="{Binding AccountHolder}" PlaceholderColor="Gray"></Entry>
+                <Entry x:Name="AccountHolder" Placeholder="account holder name" IsReadOnly="True" Margin="0,0,0,-5" TextColor="#112B47" Text="{Binding AccountHolder}" PlaceholderColor="Gray"></Entry>
               
                     </StackLayout>
             <!--principle amount and interest rate-->
@@ -43,13 +44,13 @@
                 </Grid.RowDefinitions>
                      
                 <StackLayout  Grid.Row="1" Grid.Column="1">
-                    <Label Text="Principle Amount" FontSize="20"  TextColor="#171717" HorizontalOptions="Start" VerticalOptions="Start" Padding="0,25,0,0"/>
-                    <Entry x:Name="PrincipleAmount" Placeholder="amount" IsReadOnly="True" TextColor="#112B47" PlaceholderColor="Gray"></Entry>
+                    <Label Text="Principle Amount" FontSize="20"  TextColor="#171717" HorizontalOptions="Start" VerticalOptions="Start" Padding="0,0,0,0"/>
+                    <Entry x:Name="PrincipleAmount" Placeholder="amount" IsReadOnly="True" TextColor="#112B47" Margin="0,-5,0,0" PlaceholderColor="Gray"></Entry>
                 </StackLayout>
 
                 <StackLayout  Grid.Row="1" Grid.Column="2">
-                    <Label Text="Interest Rate" FontSize="20"  TextColor="#171717" HorizontalOptions="Start" VerticalOptions="Start" Padding="40,25,0,0"/>
-                    <Entry x:Name="InterestRate" Placeholder="rate" IsReadOnly="True" TextColor="#112B47" Margin="40,0,0,0" PlaceholderColor="Gray"></Entry>
+                    <Label Text="Interest Amount" FontSize="20"  TextColor="#171717" HorizontalOptions="Start" VerticalOptions="Start" Padding="30,0,0,0"/>
+                    <Entry x:Name="InterestAmount" Placeholder="amount" IsReadOnly="True" TextColor="#112B47" Margin="30,-5,0,0" PlaceholderColor="Gray"></Entry>
                 </StackLayout>
             </Grid>
 
@@ -67,26 +68,26 @@
                 </Grid.RowDefinitions>
 
                 <StackLayout  Grid.Row="1" Grid.Column="1">
-                    <Label Text="Fine Amount" FontSize="20"  TextColor="#171717" HorizontalOptions="Start" VerticalOptions="Start" Padding="0,25,0,0"/>
-                    <Entry x:Name="FineAmount" Placeholder="fine amount" IsReadOnly="True" TextColor="#112B47" PlaceholderColor="Gray"></Entry>
+                    <Label Text="Fine Principle(P)" FontSize="20"  TextColor="#171717" HorizontalOptions="Start" VerticalOptions="Start" Padding="0,0,0,0"/>
+                    <Entry x:Name="FineAmount" Placeholder="fine amount" IsReadOnly="True" TextColor="#112B47" Margin="0,-5,0,0" PlaceholderColor="Gray"></Entry>
                 </StackLayout>
 
                 <StackLayout  Grid.Row="1" Grid.Column="2">
-                    <Label Text="Fine Rate" FontSize="20"  TextColor="#171717" HorizontalOptions="Start" VerticalOptions="Start" Padding="40,25,0,0"/>
-                    <Entry x:Name="FineRate" Placeholder="fine rate" IsReadOnly="True" TextColor="#112B47" Margin="40,0,0,0" PlaceholderColor="Gray"></Entry>
+                    <Label Text="Fine Interest(I)" FontSize="20"  TextColor="#171717" HorizontalOptions="Start" VerticalOptions="Start" Padding="40,0,0,0"/>
+                    <Entry x:Name="FineRate" Placeholder="fine rate" IsReadOnly="True" TextColor="#112B47" Margin="40,-5,0,0" PlaceholderColor="Gray"></Entry>
                 </StackLayout>
             </Grid>
 
                     <!--for due and recieved amount-->
 
-            <Label Text="Total Due" FontSize="20"  TextColor="#171717" HorizontalOptions="Start" VerticalOptions="Start" Padding="25,30,0,-5"/>
+            <Label Text="Total Due" FontSize="20"  TextColor="#171717" HorizontalOptions="Start" VerticalOptions="Start" Padding="25,0,0,-5"/>
             <StackLayout Padding="25,0,30,0">
-                <Entry x:Name="TotalDue" Placeholder="remaining due" IsReadOnly="True" TextColor="#112B47" PlaceholderColor="Gray"></Entry>
+                <Entry x:Name="TotalDue" Placeholder="remaining due" IsReadOnly="True" TextColor="#112B47" Margin="0,-5,0,0" PlaceholderColor="Gray"></Entry>
             </StackLayout>
 
-            <Label Text="Recieved Amount" FontSize="20"  TextColor="#171717" HorizontalOptions="Start" VerticalOptions="Start" Padding="25,30,0,-5"/>
+            <Label Text="Recieved Amount" FontSize="20"  TextColor="#171717" HorizontalOptions="Start" VerticalOptions="Start" Padding="25,10,0,-5"/>
             <StackLayout Padding="25,0,30,0">
-                <Entry x:Name="RecievedAmount" Placeholder="amount recieved"  TextColor="#112B47" PlaceholderColor="Gray"></Entry>
+                <Entry x:Name="RecievedAmount" Placeholder="amount recieved"  TextColor="#112B47" Margin="0,-5,0,-20" PlaceholderColor="Gray"></Entry>
             </StackLayout>
             
                                    <!--for save and cancle button-->
@@ -125,7 +126,7 @@
                   HeightRequest="60"
                         WidthRequest="40"
                     FontSize="20"
-              Text="Cancle"
+              Text="Close"
               TextColor="White"
               BackgroundColor="#112B47"
                 BorderColor="#6D6D6D"

@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:horizonsoftware="clr-namespace:HorizonSoftware" 
              x:Class="HorizonSoftware.DepositePage"
-             Title="Deposite Account">
+             Title="Deposite Account"
+              BackgroundColor="LightBlue">
     <ContentPage.Content>
         <StackLayout>
             <!--<Label Text="Deposite Account !" FontSize="Title" TextColor="#171717" HorizontalOptions="Center" VerticalOptions="Start" Padding="10,10,0,0" TextDecorations="Underline"/>-->
@@ -28,25 +29,25 @@
                     
                     
                     <SearchBar Placeholder="Search Account Number" x:Name="AccountNumber"
-                SearchButtonPressed="AccountNumber_SearchButtonPressed" Grid.Column="1" Grid.Row="1"  TextColor="Gray"/>
+                SearchButtonPressed="AccountNumber_SearchButtonPressed" Grid.Column="1" Grid.Row="1" Text="1234" TextColor="Gray"/>
 
                     <Label Text="A/C Holder's Name" FontSize="20" Grid.Row="2" Grid.Column="1" TextColor="#171717" HorizontalOptions="Start" VerticalOptions="Start" Padding="25,25,0,-5"/>
-                    
-                    <Entry x:Name="AccountHolder" Grid.Column="1" Grid.Row="3" Placeholder="Account holder name" IsReadOnly="True"  TextColor="#112B47" Margin="20,0,0,0" PlaceholderColor="Gray"></Entry>
+
+                    <Entry x:Name="AccountHolder" Grid.Column="1" Grid.Row="3" Placeholder="Account holder name" Text="{Binding BindingHolder}"  IsReadOnly="True"  TextColor="#112B47" Margin="20,0,0,0" PlaceholderColor="Gray"></Entry>
 
 
-                    <ListView Grid.Row="1" x:Name="myListView" HasUnevenRows="True" Footer="">
+                    <!--<ListView  Grid.Row="1" x:Name="myListView" HasUnevenRows="True" Footer="">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
                                     <Grid>
-                                        <Label Text="{Binding AccountNumber}" Grid.Row="1" Grid.Column="1" TextColor="Black"></Label>
-                                        <Label Text="{Binding AccountHolder}"  Grid.Row="3" Grid.Column="1" TextColor="Black"></Label>
+                                        <Label Text="{Binding Number}" Grid.Row="1" Grid.Column="1" TextColor="Black"></Label>
+                                        <Label Text="{Binding Holder}"  Grid.Row="3" Grid.Column="1" Margin="20,0,0,0" TextColor="Black"></Label>
                                     </Grid>
                                 </ViewCell>
                             </DataTemplate>
                         </ListView.ItemTemplate>
-                    </ListView>
+                    </ListView>-->
                     
                 </Grid>
             </StackLayout>

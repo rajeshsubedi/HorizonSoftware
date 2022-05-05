@@ -15,12 +15,16 @@ namespace HorizonSoftware
     {
         public class mysqlList
         {
-            public string AccountNumber { get; set; }
-            public string AccountHolder { get; set; }
+            public string Number { get; set; }
+            public string Holder { get; set; }
+          
         }
 
 
         SqlConnection sqlConnection;
+
+        public string BindingHolder { get;  set; }
+
         public DepositePage()
         {
             InitializeComponent();
@@ -44,22 +48,29 @@ namespace HorizonSoftware
 
                 List<mysqlList> mysqlLists = new List<mysqlList>();
                 sqlConnection.Open();
-                string queryString = $"Select * from dbo.DepositTable WHERE AccountNumber='{1234}'";
+                string queryString = "select AccountHolder FROM dbo.DepositTable WHERE AccountNumber=1234";
+                
                 SqlCommand command = new SqlCommand(queryString, sqlConnection);
                 SqlDataReader reader = command.ExecuteReader();
+
+              
                 while (reader.Read())
                 {
+                   
                     mysqlLists.Add(new mysqlList
                     {
-                        AccountNumber = reader["AccountNumber"].ToString(),
-                        AccountHolder = reader["AccountHolder"].ToString(),
+                        //Number = reader["AccountNumber"].ToString(),
+                        Holder = reader["AccountHolder"].ToString(),
                     }
                     );
-
+                    
+                    BindingHolder = reader["AccountHolder"].ToString();
+                    break;
                 }
                 reader.Close();
                 sqlConnection.Close();
-                myListView.ItemsSource = mysqlLists;
+                
+                //myListView.ItemsSource = mysqlLists;
 
 
             }
