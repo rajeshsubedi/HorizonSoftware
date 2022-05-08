@@ -18,10 +18,9 @@ namespace HorizonSoftware
             public string AccountNumber { get; set; }
             public string AccountHolder { get; set; }
             public string PrincipleAmount { get; set; }
-            public string InterestRate { get; set; }
-            public string FineAmount { get; set; }
-            public string FineRate { get; set; }
-            public string RecievedAmount { get; set; }
+            public string InterestAmount { get; set; }
+            public string FinePrinciple { get; set; }
+            public string FineInterest { get; set; }
             public string TotalDue { get; set; }
         }
 
@@ -31,7 +30,7 @@ namespace HorizonSoftware
         {
             InitializeComponent();
             string srvrdbname = "mydb";
-            string srvrname = "192.168.1.69";
+            string srvrname = "192.168.1.64";
             string srvrusername = "Rajesh";
             string srvrpassword = "12345";
             string sqlconn = $"Data Source={srvrname};Initial Catalog={srvrdbname};User ID={srvrusername};Password={srvrpassword}";
@@ -57,26 +56,38 @@ namespace HorizonSoftware
 
                 List<mysqlList> mysqlLists = new List<mysqlList>();
                 sqlConnection.Open();
-                string queryString = $"Select * from dbo.LoanTable WHERE AccountNumber='{AccountNumber.Text}'";
+                string queryString = $"Select AccountNumber,AccountHolder,PrincipleAmount,InterestAmount,FinePrinciple,FineInterest,TotalDue from dbo.LoanTable WHERE AccountNumber='{AccountNumber.Text}'";
                 SqlCommand command = new SqlCommand(queryString, sqlConnection);
                 SqlDataReader reader = command.ExecuteReader();
-                while (reader.Read())
+                if (reader.Read())
                 {
                     mysqlLists.Add(new mysqlList
                     {
                         AccountNumber = reader["AccountNumber"].ToString(),
                         AccountHolder = reader["AccountHolder"].ToString(),
                         PrincipleAmount = reader["PrincipleAmount"].ToString(),
-                        InterestRate = reader["InterestRate"].ToString(),
-                        FineAmount = reader["FineAmount"].ToString(),
-                        FineRate = reader["FineRate"].ToString(),
+                        InterestAmount = reader["InterestAmount"].ToString(),
+                        FinePrinciple = reader["FinePrinciple"].ToString(),
+                        FineInterest = reader["FineInterest"].ToString(),
                         TotalDue = reader["TotalDue"].ToString(),
-                        RecievedAmount = reader["RecievedAmount"].ToString(),
+                      
                     }
                     );
-
+                    AccountNumber.Text = reader["AccountNumber"].ToString();
+                    AccountHolder.Text = reader["AccountHolder"].ToString();
+                    PrincipleAmount.Text = reader["PrincipleAmount"].ToString();
+                    InterestAmount.Text = reader["InterestAmount"].ToString();
+                    FinePrinciple.Text = reader["FinePrinciple"].ToString();
+                    FineInterest.Text = reader["FineInterest"].ToString();
+                    TotalDue.Text = reader["TotalDue"].ToString();
                 }
+                else
+                {
+                    await App.Current.MainPage.DisplayAlert("Alert", "AccountNumber is incorrect.", "Ok");
+                }
+
                 reader.Close();
+                reader.Dispose();
                 sqlConnection.Close();
             }
             catch (Exception ex)

@@ -14,7 +14,7 @@
             <!--<StackLayout Padding="25,0,30,0">-->   
             <StackLayout Orientation="Vertical" Margin="0,5,0,-20">
                 <SearchBar Placeholder="Search Account Number" x:Name="AccountNumber"
-                SearchButtonPressed="SearchBar_SearchButtonPressed" SearchCommandParameter="{Binding Text, Source={x:Reference AccountNumber}}" TextColor="Gray"/>
+                SearchButtonPressed="SearchBar_SearchButtonPressed" Text="{Binding AccountNumber}" TextColor="Gray"/>
                 
                 <!--<ListView x:Name="SuggestedListView"/>-->
                 <!--<Entry x:Name="AccountNumber" Placeholder="account number" TextColor="#112B47" PlaceholderColor="Gray"></Entry>
@@ -45,12 +45,12 @@
                      
                 <StackLayout  Grid.Row="1" Grid.Column="1">
                     <Label Text="Principle Amount" FontSize="20"  TextColor="#171717" HorizontalOptions="Start" VerticalOptions="Start" Padding="0,0,0,0"/>
-                    <Entry x:Name="PrincipleAmount" Placeholder="amount" IsReadOnly="True" TextColor="#112B47" Margin="0,-5,0,0" PlaceholderColor="Gray"></Entry>
+                    <Entry x:Name="PrincipleAmount" Placeholder="amount" IsReadOnly="True" Text="{Binding PrincipleAmount}" TextColor="#112B47" Margin="0,-5,0,0" PlaceholderColor="Gray"></Entry>
                 </StackLayout>
 
                 <StackLayout  Grid.Row="1" Grid.Column="2">
                     <Label Text="Interest Amount" FontSize="20"  TextColor="#171717" HorizontalOptions="Start" VerticalOptions="Start" Padding="30,0,0,0"/>
-                    <Entry x:Name="InterestAmount" Placeholder="amount" IsReadOnly="True" TextColor="#112B47" Margin="30,-5,0,0" PlaceholderColor="Gray"></Entry>
+                    <Entry x:Name="InterestAmount" Placeholder="amount" IsReadOnly="True" Text="{Binding InterestAmount}" TextColor="#112B47" Margin="30,-5,0,0" PlaceholderColor="Gray"></Entry>
                 </StackLayout>
             </Grid>
 
@@ -69,12 +69,12 @@
 
                 <StackLayout  Grid.Row="1" Grid.Column="1">
                     <Label Text="Fine Principle(P)" FontSize="20"  TextColor="#171717" HorizontalOptions="Start" VerticalOptions="Start" Padding="0,0,0,0"/>
-                    <Entry x:Name="FineAmount" Placeholder="fine amount" IsReadOnly="True" TextColor="#112B47" Margin="0,-5,0,0" PlaceholderColor="Gray"></Entry>
+                    <Entry x:Name="FinePrinciple" Placeholder="fine amount" IsReadOnly="True" Text="{Binding FinePrinciple}" TextColor="#112B47" Margin="0,-5,0,0" PlaceholderColor="Gray"></Entry>
                 </StackLayout>
 
                 <StackLayout  Grid.Row="1" Grid.Column="2">
                     <Label Text="Fine Interest(I)" FontSize="20"  TextColor="#171717" HorizontalOptions="Start" VerticalOptions="Start" Padding="40,0,0,0"/>
-                    <Entry x:Name="FineRate" Placeholder="fine rate" IsReadOnly="True" TextColor="#112B47" Margin="40,-5,0,0" PlaceholderColor="Gray"></Entry>
+                    <Entry x:Name="FineInterest" Placeholder="fine interest" IsReadOnly="True" Text="{Binding FineInterest}" TextColor="#112B47" Margin="40,-5,0,0" PlaceholderColor="Gray"></Entry>
                 </StackLayout>
             </Grid>
 
@@ -82,7 +82,7 @@
 
             <Label Text="Total Due" FontSize="20"  TextColor="#171717" HorizontalOptions="Start" VerticalOptions="Start" Padding="25,0,0,-5"/>
             <StackLayout Padding="25,0,30,0">
-                <Entry x:Name="TotalDue" Placeholder="remaining due" IsReadOnly="True" TextColor="#112B47" Margin="0,-5,0,0" PlaceholderColor="Gray"></Entry>
+                <Entry x:Name="TotalDue" Placeholder="remaining due" IsReadOnly="True" Text="{Binding TotalDue}" TextColor="#112B47" Margin="0,-5,0,0" PlaceholderColor="Gray"></Entry>
             </StackLayout>
 
             <Label Text="Recieved Amount" FontSize="20"  TextColor="#171717" HorizontalOptions="Start" VerticalOptions="Start" Padding="25,10,0,-5"/>

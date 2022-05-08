@@ -2,6 +2,7 @@ FormsViewGroup.dll
 ImageCircle.Forms.Plugin.dll
 Microsoft.Identity.Client.dll
 Plugin.Settings.dll
+Rg.Plugins.Popup.dll
 SQLitePCLRaw.lib.e_sqlite3.android.dll
 Xamarin.AndroidX.Activity.dll
 Xamarin.AndroidX.Annotation.dll

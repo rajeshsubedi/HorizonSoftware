@@ -4,39 +4,56 @@
              x:Class="HorizonSoftware.DepositePage"
              Title="Deposite Account"
               BackgroundColor="LightBlue">
+
+ 
+    
+    
+    
+    
     <ContentPage.Content>
         <StackLayout>
             <!--<Label Text="Deposite Account !" FontSize="Title" TextColor="#171717" HorizontalOptions="Center" VerticalOptions="Start" Padding="10,10,0,0" TextDecorations="Underline"/>-->
-           
-
-             <Label Text="Account Number" FontSize="20"  TextColor="#171717" HorizontalOptions="Start" VerticalOptions="Start" Padding="25,40,0,-5"/>
-            
-            <StackLayout Padding="-5,0,0,0">
-
+            <Label Text="Account Number" FontSize="20"  TextColor="#171717" HorizontalOptions="Start" VerticalOptions="Start" Padding="25,40,0,-5"/>
+          
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="0"/>
+                        <ColumnDefinition Width="10"/>
                         <ColumnDefinition Width="380"/>
                        
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="10"/>
-                        <RowDefinition Height="30"/>
                         <RowDefinition Height="50"/>
+                        <!--<RowDefinition Height="50"/>
                         <RowDefinition Height="50"/>
-                        <RowDefinition Height="0"/>
+                        <RowDefinition Height="0"/>-->
                     </Grid.RowDefinitions>
-                    
-                    
-                    <SearchBar Placeholder="Search Account Number" x:Name="AccountNumber"
-                SearchButtonPressed="AccountNumber_SearchButtonPressed" Grid.Column="1" Grid.Row="1" Text="1234" TextColor="Gray"/>
 
-                    <Label Text="A/C Holder's Name" FontSize="20" Grid.Row="2" Grid.Column="1" TextColor="#171717" HorizontalOptions="Start" VerticalOptions="Start" Padding="25,25,0,-5"/>
+                    <SearchBar                            
+                        Placeholder="Search Account Number" x:Name="AccountNumber"  
+                SearchButtonPressed="AccountNumber_SearchButtonPressed" TextChanged="AccountNumber_TextChanged" Grid.Row="1" Grid.Column="1"  Focused="AccountNumber_Focused" Text="{Binding AccountNumber}"  TextColor="Gray"/>
+            </Grid>
 
-                    <Entry x:Name="AccountHolder" Grid.Column="1" Grid.Row="3" Placeholder="Account holder name" Text="{Binding BindingHolder}"  IsReadOnly="True"  TextColor="#112B47" Margin="20,0,0,0" PlaceholderColor="Gray"></Entry>
+            <ListView x:Name="myListView" Margin="20,0,20,0" HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate >
+                            <TextCell Text="{Binding ANumber}"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                
 
 
-                    <!--<ListView  Grid.Row="1" x:Name="myListView" HasUnevenRows="True" Footer="">
+                <Label Text="A/C Holder's Name" FontSize="20"   TextColor="#171717" HorizontalOptions="Start" VerticalOptions="Start" Padding="25,10,0,-5"/>
+
+                    <Entry x:Name="AccountHolder"  Placeholder="Account holder name" Text="{Binding AccountHolder}"  IsReadOnly="True"  TextColor="#112B47" Margin="20,0,0,0" PlaceholderColor="Gray">
+                        
+                    </Entry>
+            
+
+
+            <!--<ListView  Grid.Row="1" x:Name="myListView" HasUnevenRows="True" Footer="">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
@@ -48,10 +65,11 @@
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>-->
-                    
-                </Grid>
-            </StackLayout>
 
+                
+
+
+           
 
             <!--<Label Text="A/C Holder's Name" FontSize="20"  TextColor="#171717" HorizontalOptions="Start" VerticalOptions="Start" Padding="25,25,0,-5"/>
                 <StackLayout Padding="15,-10,0,0">

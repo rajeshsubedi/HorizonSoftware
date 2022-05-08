@@ -22,9 +22,9 @@
 
 
         <StackLayout Padding="40,40,40,10" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
-
+        
             <!--<Entry  x:Name="txtUserName" Placeholder="UserName" TextColor="#171717" PlaceholderColor="Gray"></Entry>-->
-            <Entry x:Name="txtUsername" Placeholder="Username" TextColor="#171717" PlaceholderColor="Gray"></Entry>
+            <Entry  x:Name="txtUsername" Placeholder="Username" TextColor="#171717" PlaceholderColor="Gray"></Entry>
             <Entry  x:Name="txtPassword" Placeholder="Password" IsPassword="True" TextColor="#171717" PlaceholderColor="Gray"></Entry>
         </StackLayout>
         

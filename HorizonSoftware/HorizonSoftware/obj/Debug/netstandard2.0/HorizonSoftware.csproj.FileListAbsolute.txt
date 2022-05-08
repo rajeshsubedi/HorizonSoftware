@@ -21,4 +21,6 @@ C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware\obj\Deb
 C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware\obj\Debug\netstandard2.0\DepositePage.xaml.g.cs
 C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware\obj\Debug\netstandard2.0\LoanPage.xaml.g.cs
 C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware\obj\Debug\netstandard2.0\TodayPage.xaml.g.cs
+C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware\obj\Debug\netstandard2.0\ListViewPage2.xaml.g.cs
+C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware\obj\Debug\netstandard2.0\PopupView.xaml.g.cs
 C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware\obj\Debug\netstandard2.0\HorizonSoftware.csproj.AssemblyReference.cache
