@@ -107,3 +107,5 @@ C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware.iOS\obj
 C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware.iOS\obj\iPhone\Debug\HorizonSoftware.iOS.csproj.CopyComplete
 C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware.iOS\obj\iPhone\Debug\HorizonSoftware.iOS.exe
 C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware.iOS\obj\iPhone\Debug\HorizonSoftware.iOS.pdb
+C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware.iOS\bin\iPhone\Debug\Rg.Plugins.Popup.dll
+C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware.iOS\bin\iPhone\Debug\Rg.Plugins.Popup.pdb

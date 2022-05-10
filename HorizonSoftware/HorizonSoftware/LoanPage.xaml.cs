@@ -30,21 +30,67 @@ namespace HorizonSoftware
         {
             InitializeComponent();
             string srvrdbname = "mydb";
-            string srvrname = "192.168.1.64";
+            string srvrname = "192.168.1.75";
             string srvrusername = "Rajesh";
             string srvrpassword = "12345";
             string sqlconn = $"Data Source={srvrname};Initial Catalog={srvrdbname};User ID={srvrusername};Password={srvrpassword}";
             sqlConnection = new SqlConnection(sqlconn);
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+        private async void Button_Clicked(object sender, EventArgs e)
         {
+            try
+            {
+                //if (Amount != null && !string.IsNullOrWhiteSpace(Amount.Text))
 
+                if (RecievedAmount.Text == null || RecievedAmount.Text == "")
+                {
+                    await App.Current.MainPage.DisplayAlert("Alert", "Please enter amount ", "Ok");
+                    return;
+                }
+                sqlConnection.Open();
+                string Accountnumber = AccountNumber.Text;
+                var amount = Convert.ToInt32(RecievedAmount.Text);
+                var sql = $"update dbo.LoanTable set RecievedAmount=RecievedAmount+" + RecievedAmount + " WHERE AccountNumber='" + Accountnumber + "'";
+                using (var Command = new SqlCommand(sql, sqlConnection))
+                {
+                    int reader = Command.ExecuteNonQuery();
+                    if (reader != 0)
+                    {
+                        await App.Current.MainPage.DisplayAlert("Alert", "Successfull", "Ok");
+                        _ = Navigation.PushAsync(new HomePage());
+                    }
+
+                    else
+                    {
+                        await App.Current.MainPage.DisplayAlert("Alert", "Something Where Wrong, Please Check! ", "Ok");
+                    }
+                    //Command.Close();
+                    Command.Dispose();
+                    sqlConnection.Close();
+                }
+            }
+            catch (Exception)
+            {
+                await App.Current.MainPage.DisplayAlert("Alert", "Somthing Went wrong!", "Ok");
+                //throw new Exception("something wrong");
+            }
         }
+
+
+
+
+
+
+
+
+
+
 
         private void Button_Clicked_1(object sender, EventArgs e)
         {
 
+            Navigation.PushAsync(new HomePage());
         }
 
         private async void SearchBar_SearchButtonPressed(object sender, EventArgs e)

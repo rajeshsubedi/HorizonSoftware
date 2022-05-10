@@ -16,5 +16,20 @@ namespace HorizonSoftware
         {
             InitializeComponent();
         }
+
+        private void RadioButton_CheckedChanged(object sender, CheckedChangedEventArgs e)
+        {
+          
+        }
+
+        private void RadioButton_CheckedChanged_1(object sender, CheckedChangedEventArgs e)
+        {
+
+        }
+
+        private void RadioButton_CheckedChanged_2(object sender, CheckedChangedEventArgs e)
+        {
+
+        }
     }
 }

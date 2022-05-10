@@ -14,7 +14,7 @@
         <StackLayout>
             <!--<Label Text="Deposite Account !" FontSize="Title" TextColor="#171717" HorizontalOptions="Center" VerticalOptions="Start" Padding="10,10,0,0" TextDecorations="Underline"/>-->
             <Label Text="Account Number" FontSize="20"  TextColor="#171717" HorizontalOptions="Start" VerticalOptions="Start" Padding="25,40,0,-5"/>
-          
+            
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="10"/>
@@ -22,30 +22,49 @@
                        
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="10"/>
-                        <RowDefinition Height="50"/>
-                        <!--<RowDefinition Height="50"/>
-                        <RowDefinition Height="50"/>
-                        <RowDefinition Height="0"/>-->
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="30"/>
+       
                     </Grid.RowDefinitions>
 
                     <SearchBar                            
                         Placeholder="Search Account Number" x:Name="AccountNumber"  
-                SearchButtonPressed="AccountNumber_SearchButtonPressed" TextChanged="AccountNumber_TextChanged" Grid.Row="1" Grid.Column="1"  Focused="AccountNumber_Focused" Text="{Binding AccountNumber}"  TextColor="Gray"/>
+                SearchButtonPressed="AccountNumber_SearchButtonPressed" Grid.Row="1" Grid.Column="1" Text="{Binding AccountNumber}"  TextColor="Gray"/>
+                        <!--TextChanged="AccountNumber_TextChanged"-->
+                <!--Focused="AccountNumber_Focused"-->
             </Grid>
 
-            <ListView x:Name="myListView" Margin="20,0,20,0" HasUnevenRows="True">
+            <!--<ListView x:Name="myListView" Margin="20,-5,20,0" ItemTapped="myListView_ItemTapped_1" HasUnevenRows="True" IsVisible="True" IsEnabled="True">
                     <ListView.ItemTemplate>
                         <DataTemplate >
-                            <TextCell Text="{Binding ANumber}"/>
+                            <TextCell Text="{Binding ANumber}" TextColor="Black"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>-->
+          
+
+            <!--<AbsoluteLayout>
+                <Entry TextChanged="searchBar_TextChanged" BackgroundColor="#f9f9f9" TextColor="#FF464859" FontSize="16" PlaceholderColor="#646b7a" x:Name="AccountNumber" Placeholder="account number" AbsoluteLayout.LayoutBounds="15,15,380,38" AbsoluteLayout.LayoutFlags="None"/>
+                <ListView x:Name="myListView" IsVisible="False"   CachingStrategy="RecycleElement" BackgroundColor="White" ItemTapped="myListView_ItemTapped_1" AbsoluteLayout.LayoutBounds="20,200,10,20" AbsoluteLayout.LayoutFlags="None">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame>
+                                    <StackLayout BackgroundColor="White">
+                                        <Label Text="{Binding .}" FontSize="16" TextColor="#FF464859"/>
+                                    </StackLayout>
+                                </Frame>
+                            </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
+            </AbsoluteLayout>-->
 
-                
 
 
-                <Label Text="A/C Holder's Name" FontSize="20"   TextColor="#171717" HorizontalOptions="Start" VerticalOptions="Start" Padding="25,10,0,-5"/>
+
+
+            <Label Text="A/C Holder's Name" FontSize="20"   TextColor="#171717" HorizontalOptions="Start" VerticalOptions="Start" Padding="25,0,0,-5"/>
 
                     <Entry x:Name="AccountHolder"  Placeholder="Account holder name" Text="{Binding AccountHolder}"  IsReadOnly="True"  TextColor="#112B47" Margin="20,0,0,0" PlaceholderColor="Gray">
                         
@@ -101,7 +120,7 @@
 
                 <Label Text="Amount" FontSize="20"  TextColor="#171717" HorizontalOptions="Start" VerticalOptions="Start" Padding="25,25,0,-5"/>
                 <StackLayout Padding="25,0,30,0">
-                    <Entry x:Name="Amount" Placeholder="Enter Amount"  TextColor="#112B47" PlaceholderColor="Gray"></Entry>
+                    <Entry x:Name="Amount" Placeholder="Enter Amount" TextColor="#112B47" PlaceholderColor="Gray"></Entry>
                 </StackLayout>
 
             
