@@ -34,7 +34,7 @@ namespace HorizonSoftware
         {
             InitializeComponent();
             string srvrdbname = "mydb";
-            string srvrname = "192.168.1.75";
+            string srvrname = "192.168.1.72";
             string srvrusername = "Rajesh";
             string srvrpassword = "12345";
             string sqlconn = $"Data Source={srvrname};Initial Catalog={srvrdbname};User ID={srvrusername};Password={srvrpassword}";
@@ -78,6 +78,7 @@ namespace HorizonSoftware
 
 
 
+                             //EnergySaverStatus button click
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
@@ -128,7 +129,7 @@ namespace HorizonSoftware
 
 
 
-
+                                       //Search button click
 
         private async void AccountNumber_SearchButtonPressed(object sender, EventArgs e)
         {
@@ -176,6 +177,7 @@ namespace HorizonSoftware
 
 
 
+                                  //cancle button click
 
         private void Button_Clicked_1(object sender, EventArgs e)
         {

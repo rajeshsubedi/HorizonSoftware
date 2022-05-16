@@ -30,12 +30,15 @@ namespace HorizonSoftware
         {
             InitializeComponent();
             string srvrdbname = "mydb";
-            string srvrname = "192.168.1.75";
+            string srvrname = "192.168.1.72";
             string srvrusername = "Rajesh";
             string srvrpassword = "12345";
             string sqlconn = $"Data Source={srvrname};Initial Catalog={srvrdbname};User ID={srvrusername};Password={srvrpassword}";
             sqlConnection = new SqlConnection(sqlconn);
         }
+
+
+
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
@@ -51,7 +54,7 @@ namespace HorizonSoftware
                 sqlConnection.Open();
                 string Accountnumber = AccountNumber.Text;
                 var amount = Convert.ToInt32(RecievedAmount.Text);
-                var sql = $"update dbo.LoanTable set RecievedAmount=RecievedAmount+" + RecievedAmount + " WHERE AccountNumber='" + Accountnumber + "'";
+                var sql = $"update dbo.LoanTable set RecievedAmount=RecievedAmount+" +amount+ " WHERE AccountNumber='" + Accountnumber + "'";
                 using (var Command = new SqlCommand(sql, sqlConnection))
                 {
                     int reader = Command.ExecuteNonQuery();
@@ -92,6 +95,8 @@ namespace HorizonSoftware
 
             Navigation.PushAsync(new HomePage());
         }
+
+
 
         private async void SearchBar_SearchButtonPressed(object sender, EventArgs e)
         {

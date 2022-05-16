@@ -23,17 +23,16 @@
                     <RadioButton Content="Deposit" Margin="-15,-15,0,-10"
                      GroupName="colors"
                      TextColor="White"
-                     IsChecked="True"
               CheckedChanged="RadioButton_CheckedChanged"/>
                 </Frame>
 
                 <Frame Grid.Column="2" Grid.Row="1" BackgroundColor="#112B47"  Margin="-5,-10,-9,0">
                     <RadioButton Content="Loan"  Margin="10,-15,0,-10"
                      GroupName="colors"
-                     TextColor="White"
-                               
+                     TextColor="White"            
               CheckedChanged="RadioButton_CheckedChanged_1"/>
                 </Frame>
+                
                 <Frame Grid.Column="3" Grid.Row="1" BackgroundColor="#112B47" Margin="5,-10,-19,0">
                     <RadioButton Content="Today" Margin="5,-15,0,-10"
                      GroupName="colors"
@@ -43,21 +42,36 @@
             </Grid>
 
 
-            <Frame  BackgroundColor="White" Margin="5,-5,5,5">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="10"/>
-                        <ColumnDefinition Width="120"/>
-                        <ColumnDefinition Width="120"/>
-                        <ColumnDefinition Width="120"/>
-                        <ColumnDefinition Width="10"/>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="5"/>
-                        <!--<RowDefinition Height="100"/>-->
-                    </Grid.RowDefinitions>
-                </Grid>
-            </Frame>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="10"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5"/>
+                    <!--<RowDefinition Height="500"/>-->
+                </Grid.RowDefinitions>
+
+                <ListView x:Name="MyListView" HasUnevenRows="True" Footer="">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid>
+                                    <Label Text="{Binding ANumber}" Grid.Column="1" Grid.Row="1" TextColor="Black"></Label>
+                                    <Label Grid.Row="0" Text="{Binding AHolder}" Grid.Column="2" TextColor="Black"></Label>
+                                    <!--<Label Grid.Row="0" Text="{Binding Body}" Grid.Column="3" TextColor="Black"></Label>-->
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+
+
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
