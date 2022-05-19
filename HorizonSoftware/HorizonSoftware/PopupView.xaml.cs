@@ -31,7 +31,7 @@ namespace HorizonSoftware
             //SqlConnection sqlConnection;
             InitializeComponent();
             //string srvrdbname = "mydb";
-            //string srvrname = "192.168.1.72";
+            //string srvrname = "192.168.1.71";
             //string srvrusername = "Rajesh";
             //string srvrpassword = "12345";
             //string sqlconn = $"Data Source={srvrname};Initial Catalog={srvrdbname};User ID={srvrusername};Password={srvrpassword}";

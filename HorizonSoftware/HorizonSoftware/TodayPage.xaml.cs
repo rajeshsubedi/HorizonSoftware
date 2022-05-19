@@ -18,11 +18,13 @@ namespace HorizonSoftware
         {
             public string ANumber { get; set; }
             public string AHolder { get; set; }
-            public string Amount { get; set; }
-
+            public int Amount { get; set; }
+           
         }
 
         public ObservableCollection<string> mysqlLists { get; set; }
+
+
         ObservableCollection<string> data = new ObservableCollection<string>();
 
 
@@ -32,7 +34,7 @@ namespace HorizonSoftware
         {
             InitializeComponent();
             string srvrdbname = "mydb";
-            string srvrname = "192.168.1.72";
+            string srvrname = "192.168.1.71";
             string srvrusername = "Rajesh";
             string srvrpassword = "12345";
             string sqlconn = $"Data Source={srvrname};Initial Catalog={srvrdbname};User ID={srvrusername};Password={srvrpassword}";
@@ -47,25 +49,37 @@ namespace HorizonSoftware
                 {
                     List<mysqlList> mysqlLists = new List<mysqlList>();
                     sqlConnection.Open();
-                    string queryString = "select AccountNumber,AccountHolder from dbo.DepositeTable";
-
-                    SqlCommand command = new SqlCommand(queryString, sqlConnection);
-                    SqlDataReader reader = command.ExecuteReader();
-                    while (reader.Read())
+                    string queryString = "select AccountNumber,AccountHolder,Amount from dbo.DepositeTable Union all select AcNo='',AcName='Total',Amount=sum(Amount) from DepositeTable ";
+                    //string query = "SELECT SUM(Amount) as SUM from dbo.DepositeTable";
+                    //SqlCommand comm = new SqlCommand(query, sqlConnection);
+                    //SqlDataReader read = comm.ExecuteReader();
+                    
+                //string total = "0";
+                //while (read.Read())
+                //    total = read["SUM"].ToString();
+                //read.Close();
+                //string total = "120000";
+                SqlCommand command = new SqlCommand(queryString, sqlConnection);
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
                     {
                         mysqlLists.Add(new mysqlList
                         {
                             ANumber = reader["AccountNumber"].ToString(),
                             AHolder = reader["AccountHolder"].ToString(),
+                            Amount = Convert.ToInt32(reader["Amount"]),
                         }
                         );
-                    }
-                    reader.Close();
-                    //IsVisible = false;
-                    sqlConnection.Close();
-                MyListView.ItemsSource = mysqlLists;
-
+                    //txtTotal.Text = reader["Total"].ToString();
+                    //txtTotal.Text = total.ToString();
                 }
+
+                reader.Close();
+                //reader.Dispose();
+                sqlConnection.Close();
+                MyListView.ItemsSource = mysqlLists;
+                
+            }
                 catch (Exception ex)
                 {
                     await App.Current.MainPage.DisplayAlert("Alert", ex.Message, "Ok");
@@ -80,12 +94,12 @@ namespace HorizonSoftware
 
             private  void RadioButton_CheckedChanged_1(object sender, CheckedChangedEventArgs e)
         {
-            Navigation.PushAsync(new HomePage());
+            Navigation.PushAsync(new TodayLoan());
         }
 
         private void RadioButton_CheckedChanged_2(object sender, CheckedChangedEventArgs e)
         {
-            Navigation.PushAsync(new HomePage());
+            Navigation.PushAsync(new TodayBoth());
         }
     }
 }
