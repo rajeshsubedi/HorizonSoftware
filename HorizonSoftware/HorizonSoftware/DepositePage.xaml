@@ -64,7 +64,7 @@
 
 
 
-            <Label Text="A/C Holder's Name" FontSize="20"   TextColor="#171717" HorizontalOptions="Start" VerticalOptions="Start" Padding="25,0,0,-5"/>
+            <Label Text="A/C Holder's Name" FontSize="20"   TextColor="#171717" HorizontalOptions="Start" VerticalOptions="Start" Padding="25,20,0,-5"/>
 
                     <Entry x:Name="AccountHolder"  Placeholder="Account holder name" Text="{Binding AccountHolder}"  IsReadOnly="True"  TextColor="#112B47" Margin="20,0,0,0" PlaceholderColor="Gray">
                         
@@ -118,7 +118,7 @@
                 <!--</Grid>-->
             <!--</StackLayout>-->
 
-                <Label Text="Amount" FontSize="20"  TextColor="#171717" HorizontalOptions="Start" VerticalOptions="Start" Padding="25,25,0,-5"/>
+                <Label Text="Amount" FontSize="20"  TextColor="#171717" HorizontalOptions="Start" VerticalOptions="Start" Padding="25,10,0,-5"/>
                 <StackLayout Padding="25,0,30,0">
                     <Entry x:Name="Amount" Placeholder="Enter Amount" TextColor="#112B47" PlaceholderColor="Gray"></Entry>
                 </StackLayout>

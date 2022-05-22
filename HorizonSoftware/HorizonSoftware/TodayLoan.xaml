@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HorizonSoftware.TodayLoan"
              Title="Loan"
-             BackgroundColor="LightBlue">
+             BackgroundColor="White">
     
     <ContentPage.Content>
         <ScrollView>
@@ -99,7 +99,7 @@
                                         <Grid>
                                             <Label Text="{Binding ANumber}"  Grid.Column="1" Grid.Row="1" Padding="-80,0,0,0" Margin="0,0,0,0" TextColor="Black"></Label>
                                             <Label  Text="{Binding AHolder}"  Grid.Column="2" Grid.Row="1" Padding="-70,0,0,0" Margin="0,0,0,0"  TextColor="Black"></Label>
-                                            <Label  Text="{Binding Amount}" Grid.Column="3" Grid.Row="1" Padding="-15,0,0,0" Margin="0,0,0,0" TextColor="Black"></Label>
+                                            <Label  Text="{Binding Amount}" HorizontalTextAlignment="End" Grid.Column="3" Grid.Row="1" Padding="-15,0,0,0" Margin="0,0,0,0" TextColor="Black"></Label>
 
                                         </Grid>
                                     </ViewCell>

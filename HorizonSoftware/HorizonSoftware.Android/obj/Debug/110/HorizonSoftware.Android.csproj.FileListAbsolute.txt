@@ -662,3 +662,6 @@ C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware.Android
 C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware.Android\obj\Debug\110\android\assets\Rg.Plugins.Popup.pdb
 C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware.Android\obj\Debug\110\android\src\crc643dd37f507f3d9710\PopupPageRenderer.java
 C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware.Android\obj\Debug\110\android\src\crc64fdbeeba101bd56dc\RgGestureDetectorListener.java
+C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware.Android\obj\Debug\110\res\drawable\background1.png
+C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware.Android\obj\Debug\110\res\drawable\background3.png
+C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware.Android\obj\Debug\110\res\drawable\background2.png

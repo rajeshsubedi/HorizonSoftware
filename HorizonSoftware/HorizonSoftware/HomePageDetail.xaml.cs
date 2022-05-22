@@ -34,5 +34,39 @@ namespace HorizonSoftware
         {
             Navigation.PushAsync(new TodayPage());
         }
+
+   
+
+
+        private async void Close_Clicked_1(object sender, EventArgs e)
+        {
+            var result = await this.DisplayAlert("Alert!", "Do you want to Logout?", "yes", "No");
+            if (result == true)
+            {
+                _ = Navigation.PushAsync(new LoginPage());
+            }
+            else
+            {
+                //_ = Navigation.PushAsync(new HomePageDetail());
+            }
+        }
+
+
+
+
+        protected override bool OnBackButtonPressed()
+        {
+            Device.BeginInvokeOnMainThread(async () =>
+            {
+                var result = await this.DisplayAlert("Alert!", "Do you really want to exit?", "Yes", "No");
+
+                if (result == true)
+                {
+                    /*    System.Diagnostics.Process.GetCurrentProcess().CloseMainWindow();*/ // Or anything else
+                    _ = Navigation.PushAsync(new LoginPage());
+                }
+            });
+            return true;
+        }
     }
 }

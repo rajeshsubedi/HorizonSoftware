@@ -5,8 +5,8 @@ using System.Linq;
 using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration;
 using Xamarin.Forms.Xaml;
 
 namespace HorizonSoftware
@@ -14,6 +14,8 @@ namespace HorizonSoftware
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ActivationPage : ContentPage
     {
+
+
         public class mysqlList
         {
             public string Liscence { get; set; }
@@ -21,18 +23,25 @@ namespace HorizonSoftware
         }
 
         SqlConnection sqlConnection;
+     
 
         public ActivationPage()
         {
             InitializeComponent();
             string srvrdbname = "mydb";
-            string srvrname = "192.168.1.71";
+            string srvrname = "192.168.1.68";
             string srvrusername = "Rajesh";
             string srvrpassword = "12345";
             string sqlconn = $"Data Source={srvrname};Initial Catalog={srvrdbname};User ID={srvrusername};Password={srvrpassword}";
-            sqlConnection = new SqlConnection(sqlconn);
+            sqlConnection = new SqlConnection(sqlconn);    
             CheckForActivation();
+            Close.Clicked += Button_Clicked;
         }
+
+       
+
+
+
 
         public void CheckForActivation()
         {
@@ -71,7 +80,7 @@ namespace HorizonSoftware
                     return nic.GetPhysicalAddress();
                 }
             }
-            return null;
+             return null;
         }
 
 
@@ -80,19 +89,6 @@ namespace HorizonSoftware
 
 
         private async void Button_Clicked_1(object sender, EventArgs e)
-
-
-        //{
-        //    if (txtliscence.Text == "12345" && txttoken.Text == "12345")
-        //    {
-        //        Navigation.PushAsync(new MainPage());
-        //    }
-
-        //    else
-        //    {
-        //        DisplayAlert("Sorry", "liscence or token is incorrect.", "OK");
-        //    }
-        //}
 
         {
             //Console.WriteLine(txtliscence.Text);
@@ -144,6 +140,48 @@ namespace HorizonSoftware
             }
 
         }
+
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+            var result = await this.DisplayAlert("Alert!", "Do you want to exit?", "yes", "No");
+            if (result == true)
+            {
+                System.Environment.Exit(0);
+            }
+            else
+            {
+                //_ = Navigation.PushAsync(new ActivationPage());
+            }
+        }
+
+
+        //protected override bool OnBackButtonPressed()
+        //{
+        //    Device.BeginInvokeOnMainThread(async () =>
+        //    {
+        //        var result = await DisplayAlert("Alert!", "Do you want to exit?", "yes", "No");
+        //        if (result) await Navigation.PopAsync();
+
+        //    });
+        //    return base.OnBackButtonPressed();
+        //    return true;
+
+        //}
+
+        protected override bool OnBackButtonPressed()
+        {
+           Device.BeginInvokeOnMainThread(async () =>
+            {
+                var result = await this.DisplayAlert("Alert!", "Do you really want to exit?", "Yes", "No");
+
+                if (result)
+                {
+                    System.Diagnostics.Process.GetCurrentProcess().CloseMainWindow(); // Or anything else
+                }
+            });
+            return true;
+        }
+
     }
 }
     

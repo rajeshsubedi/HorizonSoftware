@@ -34,11 +34,11 @@ namespace HorizonSoftware
             {
                 MenuItems = new ObservableCollection<HomePageFlyoutMenuItem>(new[]
                 {
-                    new HomePageFlyoutMenuItem { Id = 0, Title = "Feature1" , IconSource="comp1.png" },
-                    new HomePageFlyoutMenuItem { Id = 1, Title = "Feature2" , IconSource="comp1.png"},
-                    new HomePageFlyoutMenuItem { Id = 2, Title = "Feature3" , IconSource="comp1.png"},
-                    new HomePageFlyoutMenuItem { Id = 3, Title = "Feature4" , IconSource="comp1.png"},
-                    new HomePageFlyoutMenuItem { Id = 4, Title = "Feature5" ,IconSource="comp1.png" },
+                    new HomePageFlyoutMenuItem { Id = 0, Title = "Feature1" , IconSource="comp1.png" ,TargetType=typeof(Feature1) },
+                    new HomePageFlyoutMenuItem { Id = 1, Title = "Feature2" , IconSource="comp1.png" ,TargetType=typeof(Feature2)},
+                    new HomePageFlyoutMenuItem { Id = 2, Title = "Feature3" , IconSource="comp1.png" ,TargetType=typeof(Feature3)},
+                    new HomePageFlyoutMenuItem { Id = 3, Title = "Feature4" , IconSource="comp1.png" ,TargetType=typeof(Feature4)},
+                    new HomePageFlyoutMenuItem { Id = 4, Title = "Feature5" ,IconSource="comp1.png" ,TargetType=typeof(Feature5)},
                 });
             }
 

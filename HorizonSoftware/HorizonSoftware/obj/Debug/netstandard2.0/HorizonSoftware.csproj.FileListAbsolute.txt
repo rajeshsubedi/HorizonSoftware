@@ -26,3 +26,8 @@ C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware\obj\Deb
 C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware\obj\Debug\netstandard2.0\TodayBoth.xaml.g.cs
 C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware\obj\Debug\netstandard2.0\TodayLoan.xaml.g.cs
 C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware\obj\Debug\netstandard2.0\HorizonSoftware.csproj.AssemblyReference.cache
+C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware\obj\Debug\netstandard2.0\Feature1.xaml.g.cs
+C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware\obj\Debug\netstandard2.0\Feature2.xaml.g.cs
+C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware\obj\Debug\netstandard2.0\Feature3.xaml.g.cs
+C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware\obj\Debug\netstandard2.0\Feature4.xaml.g.cs
+C:\Users\hp\source\repos\HorizonSoftware\HorizonSoftware\HorizonSoftware\obj\Debug\netstandard2.0\Feature5.xaml.g.cs

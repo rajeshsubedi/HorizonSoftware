@@ -4,17 +4,15 @@
              x:Class="HorizonSoftware.HomePageDetail"
              Title="Horizon Technology"
              BackgroundColor="#eeeeee">
+    
     <!--<ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add"
-           
+        <ToolbarItem Text="Add"           
                  Order="Primary"
                  Priority="0"
                      />
     </ContentPage.ToolbarItems>-->
-
     <StackLayout>
-
-                                 <!--adding dashboard image-->
+        <!--adding dashboard image-->
          <StackLayout>
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -22,14 +20,14 @@
                     <!--<ColumnDefinition Width="*"/>-->
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="460"/>
+                    <RowDefinition Height="400"/>
                 </Grid.RowDefinitions>
 
                 <Frame CornerRadius="20" 
                    Padding="0"
                         IsClippedToBounds="True">
                     <Image Aspect="AspectFill"
-                           Source="back1.png"
+                           Source="background2.png"
                            Grid.ColumnSpan="5"
                            Grid.RowSpan="4"
                            Opacity="0.8"/>
@@ -46,24 +44,25 @@
 
 
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="10"/>
                         <RowDefinition Height="60"/>
                         <RowDefinition Height="5"/>
                     </Grid.RowDefinitions>
 
 
-                    <Frame Padding="0" 
+                    <Frame Padding="0"
                                 HeightRequest="55"
                                 WidthRequest="55"
                                 BackgroundColor="White"
                                 CornerRadius="30"
                                 BorderColor="Teal"
-                           Grid.Column="1"
-                           Grid.Row="1"
+                                Grid.Column="1"
+                                  Grid.Row="1"
                                 HorizontalOptions="Start"
                                 VerticalOptions="End">
+
                         <Frame.Content>
-                            <Image Source="Horizon.png" Aspect="Fill"/>
+                            <Image Source="Horizon.png" Aspect="Fill" Margin="0,0,0,0"/>
                         </Frame.Content>
                     </Frame>
 
@@ -74,7 +73,7 @@
                             HorizontalTextAlignment="Start"
                            VerticalTextAlignment="Center"
                           Text="Samasti Cooperative"
-                            TextColor="White"
+                            TextColor="Black"
                             FontSize="30"
                             FontAttributes="Bold"
                            Style="{DynamicResource SubtitleStyle}"/>
@@ -83,7 +82,7 @@
                             HorizontalTextAlignment="Start"
                            VerticalTextAlignment="Center"
                           Text="Samasti24@gmail.com"
-                            TextColor="White"
+                            TextColor="Black"
                             FontAttributes="Italic"
                            Style="{DynamicResource SubtitleStyle}"/>
 
@@ -91,7 +90,7 @@
                             HorizontalTextAlignment="Start"
                            VerticalTextAlignment="Center"
                                Text="Naxal,Kathmandu"
-                            TextColor="White"
+                            TextColor="Black"
                             FontAttributes="Italic"
                            Style="{DynamicResource SubtitleStyle}"/>
                     </StackLayout>
@@ -111,20 +110,20 @@
 
 
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="275"/>
+                        <RowDefinition Height="230"/>
                         <RowDefinition Height="100"/>
                         <RowDefinition Height="30"/>
                     </Grid.RowDefinitions>
 
                                      <!--for image and detail 1(Deposit)-->
                     <Frame Padding="0" 
-                                HeightRequest="100"
-                                WidthRequest="90"
+                                HeightRequest="80"
+                                WidthRequest="80"
                                 BackgroundColor="White"
                                 CornerRadius="3"
                                 BorderColor="Teal"
-                           Grid.Column="1"
-                           Grid.Row="1"
+                                 Grid.Column="1"
+                                  Grid.Row="1"
                                 HorizontalOptions="Start"
                                 VerticalOptions="End">
                         
@@ -140,23 +139,23 @@
 
                     <Label Grid.Row="2"
                            Grid.Column="1"
-                           Padding="8,0,0,0"
+                           Padding="8,0,-10,0"
                             HorizontalOptions="Start"
                            VerticalOptions="Center"
                              Text="Deposit"
-                            TextColor="White"
-                            FontSize="22"
+                            TextColor="Black"
+                            FontSize="18"
                             FontAttributes="Bold"/>
 
                                       <!--for image and detail 2(Loan)-->
                     <Frame Padding="0" 
-                                HeightRequest="100"
-                                WidthRequest="90"
+                                HeightRequest="80"
+                                WidthRequest="80"
                                 BackgroundColor="White"
                                 CornerRadius="3"
                                 BorderColor="Teal"
-                           Grid.Column="2"
-                           Grid.Row="1"
+                                 Grid.Column="2"
+                                  Grid.Row="1"
                                 HorizontalOptions="Start"
                                 VerticalOptions="End">
                         
@@ -176,14 +175,14 @@
                             HorizontalOptions="Start"
                            VerticalOptions="Center"
                              Text="Loan"
-                            TextColor="White"
-                            FontSize="22"
+                            TextColor="Black"
+                            FontSize="18"
                             FontAttributes="Bold"/>
  
                            <!--for image and detail 3 (Today)-->
                     <Frame Padding="0" 
-                                HeightRequest="100"
-                                WidthRequest="90"
+                                HeightRequest="80"
+                                WidthRequest="80"
                                 BackgroundColor="White"
                                 CornerRadius="3"
                                 BorderColor="Teal"
@@ -208,8 +207,8 @@
                             HorizontalOptions="Start"
                            VerticalOptions="Center"
                              Text="Today"
-                            TextColor="White"
-                            FontSize="22"
+                            TextColor="Black"
+                            FontSize="18"
                             FontAttributes="Bold"/>
 
 
@@ -229,15 +228,15 @@
                     <!--<ColumnDefinition Width="*"/>-->
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*"/>
                     <!--<RowDefinition Height="*"/>-->
                 </Grid.RowDefinitions>
             <StackLayout>
                 <Frame CornerRadius="20" 
-           Padding="0"
-           IsClippedToBounds="True">
+                    Padding="0"
+                     IsClippedToBounds="True">
                     <Image Aspect="Fill"
-                      Source="back1.png"
+                      Source="background2.png"
                            Grid.ColumnSpan="5"
                            Grid.RowSpan="4"
                            Opacity="0.8"/>
@@ -250,21 +249,21 @@
                     <ColumnDefinition Width="10"/>
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="30"/>
+                    <ColumnDefinition Width="10"/>
                 </Grid.ColumnDefinitions>
 
 
                 <Grid.RowDefinitions>
                     <RowDefinition Height="10"/>
                     <RowDefinition Height="60"/>
-                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="50"/>
                 </Grid.RowDefinitions>
            
 
             <Frame Padding="0" 
                                 HeightRequest="55"
                                 WidthRequest="55"
-                                BackgroundColor="White"
+                                BackgroundColor="Black"
                                 CornerRadius="29"
                                 BorderColor="Teal"
                                 Grid.Column="2"
@@ -275,25 +274,25 @@
                     <Image Source="horizon.png" Aspect="Fill"/>
                 </Frame.Content>
             </Frame>
-                
-            <StackLayout VerticalOptions="CenterAndExpand" Grid.Row="1" Margin="70,0,0,0"
+
+                    <StackLayout VerticalOptions="CenterAndExpand" Grid.Row="1" Margin="70,0,0,0"
                        Grid.Column="2" Grid.ColumnSpan="3" Orientation="Vertical">
-                <Label
+                        <Label
                             
                             HorizontalTextAlignment="Start"
                            VerticalTextAlignment="Center"
                           Text="Horizon Technology"
-                            TextColor="White"
+                            TextColor="Black"
                             FontSize="25"
                             FontAttributes="Bold"
                            Style="{DynamicResource SubtitleStyle}"/>
-                
-                <Label
+
+                        <Label
                             Margin="0,-5,0,0"
                             HorizontalTextAlignment="Start"
                            VerticalTextAlignment="Center"
                           Text="Horizontech24@gmail.com"
-                            TextColor="White"
+                            TextColor="Black"
                             FontAttributes="Italic"                        
                            Style="{DynamicResource SubtitleStyle}"/>
 
@@ -302,12 +301,25 @@
                             HorizontalTextAlignment="Start"
                            VerticalTextAlignment="Center"
                           Text="Mid-baneshor,Kathmandu"
-                            TextColor="White"
+                            TextColor="Black"
                             FontAttributes="Italic"                        
                            Style="{DynamicResource SubtitleStyle}"/>
-
                     </StackLayout>
                 </Grid>
+                
+                <Button 
+              VerticalOptions="Center"
+              Text="logout"
+                x:Name="Close"
+              TextColor="White"
+              BackgroundColor="#112B47"
+                BorderColor="#6D6D6D"
+              BorderWidth="1.5"
+              CornerRadius="20"
+           Clicked="Close_Clicked_1"
+            Margin="120,120,120,0"
+              ></Button>
+                
             </Grid>
         </StackLayout>
         

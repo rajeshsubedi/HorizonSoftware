@@ -63,6 +63,23 @@
             Margin="30,0,30,0"
               ></Button>
         </StackLayout>
+        
+        
+        <StackLayout Margin="20,10,20,0">
+            <Button 
+              VerticalOptions="Center"
+              Text="CLOSE"
+                x:Name="Close"
+              TextColor="White"
+              BackgroundColor="#112B47"
+                BorderColor="#6D6D6D"
+              BorderWidth="1.5"
+              CornerRadius="20"
+           Clicked="Button_Clicked_1"
+            Margin="30,0,30,0"
+              ></Button>
+        </StackLayout>
+
 
         <Label HorizontalOptions="Center">
             <Label.FormattedText>

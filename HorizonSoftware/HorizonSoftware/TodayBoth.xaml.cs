@@ -31,7 +31,7 @@ namespace HorizonSoftware
         {
             InitializeComponent();
             string srvrdbname = "mydb";
-            string srvrname = "192.168.1.71";
+            string srvrname = "192.168.1.68";
             string srvrusername = "Rajesh";
             string srvrpassword = "12345";
             string sqlconn = $"Data Source={srvrname};Initial Catalog={srvrdbname};User ID={srvrusername};Password={srvrpassword}";
@@ -76,6 +76,10 @@ namespace HorizonSoftware
                 //IsVisible = false;
                 sqlConnection.Close();
                 MyListView.ItemsSource = mysqlLists;
+
+                //var items = MyListView;
+                //var last = items[items.Count - 1];
+                //last.EnsureVisible();
 
             }
             catch (Exception ex)
